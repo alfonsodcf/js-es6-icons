@@ -1,8 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#h1{
+    height: 50px;
+}
 h1{
     color: #29B1DD;
 }
 nav{
     background-color: #29B1DD;
-    padding: 25px 0;
+    height: 50px;
     text-align: center;
+}
+
+nav div{
+padding-top: 15px;
+}
+
+main{
+    height: calc(100vh - 100px);
+    background-color: #DDDDDD;
 }
