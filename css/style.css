@@ -24,3 +24,22 @@ main{
     height: calc(100vh - 100px);
     background-color: #DDDDDD;
 }
+
+.container{
+    padding: 50px;
+    text-align: center;
+}
+
+.card{
+    display: inline-block;
+    height: 80px;
+    width: 160px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#container_card{
+    padding-top: 20px;
+}
