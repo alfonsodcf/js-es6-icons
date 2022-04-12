@@ -1,4 +1,4 @@
-const card = [
+const icons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,36 @@ const card = [
 		color: 'blue'
 	}
 ];
+
+{/* <div class="card">
+    <div id="container_card">
+        <i class="fa-solid fa-cat"></i>
+        <p> cat </p>
+    </div>
+</div> */}
+
+const container = document.getElementById('container')
+
+function printAllicons(){
+	for(let i= 0; i < icons.length; i++){
+		const card = document.createElement('div');
+		card.setAttribute('class','card');
+
+		card.innerHTML = `
+		<div class="card">
+			<div id="container_card">
+				<i class="${icons[i].famyly} ${icons[i].prefix}${icons[i].name}" style="color:${icona[i].color} </i>
+				<p> ${icons[i].name} </p>
+			</div>
+		</div>
+	   `;
+	}
+}
+
+printAllicons()
+
+const typeElement = document.getElementById('level')
+
+typeElement.addEventListener('change',function(){
+
+})
