@@ -113,35 +113,62 @@ const icons = [
 	}
 ];
 
-{/* <div class="card">
-    <div id="container_card">
-        <i class="fa-solid fa-cat"></i>
+/* <div class="card">
+        <i class="fas fa-cat"></i>
         <p> cat </p>
-    </div>
-</div> */}
+</div> */
 
-const container = document.getElementById('container')
+const container = document.getElementById('container');
+//console.log(container)
 
-function printAllicons(){
-	for(let i= 0; i < icons.length; i++){
+function printAllicons(filteredIcon){
+	container.innerHTML = ''; // serve a pulire il container ogni volta che la funzione viene attivata 
+	filteredIcon.forEach((icona)=>{
+	//icona == icons[i] 
 		const card = document.createElement('div');
 		card.setAttribute('class','card');
-
 		card.innerHTML = `
-		<div class="card">
-			<div id="container_card">
-				<i class="${icons[i].famyly} ${icons[i].prefix}${icons[i].name}" style="color:${icona[i].color} </i>
-				<p> ${icons[i].name} </p>
-			</div>
-		</div>
-	   `;
-	}
+			<i class="${icona.family}  ${icona.prefix}${icona.name}" style="color:${icona.color}"></i>
+			<p>${icona.name}</p>
+		`;
+		//console.log(card);
+		container.append(card);
+	})
+	
+	
 }
+// for(let i=0; i < icons.length; i++){          -- e la stessa cosa
+// 	const card = document.createElement('div');
+// 	card.setAttribute('class','card');
+		
+	
+// 	card.innerHTML = `
+// 		<i class="${icons[i].family}  ${icons[i].prefix}${icons[i].name}" style="color:${icons[i].color}"></i>
+// 		<p>${icons[i].name}</p>
+// 	`;
 
-printAllicons()
+printAllicons(icons);
 
-const typeElement = document.getElementById('level')
 
+
+const typeElement = document.getElementById('type-filter')
+//console.log(typeElement)
 typeElement.addEventListener('change',function(){
-
+	//console.log(this);
+	const iconType = this.value;//salva il valore selezionato da utente 
+	//console.log(iconType)
+	const filtereIcons = icons.filter((icona)=>{
+		//return icona.type === iconType; -- crea un arey con gli ogetti che anno per tipo cio che l'utente a selezionato dalla select 
+		return icona.type === iconType || !iconType //soluzine vist a lezione che mi da lo stesso problema della if piu in  basso
+	})	
+	console.log(filtereIcons)	
+	printAllicons(filtereIcons);
 })
+
+	// if(iconType === ''){ non funsiona  va sempre nel else
+	// 	printAllicons(icons);	
+	// } else {
+	// 	printAllicons(filtereIcons);
+	// }
+
+
