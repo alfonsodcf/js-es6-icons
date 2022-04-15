@@ -16,16 +16,13 @@ nav{
     text-align: center;
 }
 
-nav div{
-padding-top: 15px;
-}
 
 main{
     height: calc(100vh - 100px);
     background-color: #DDDDDD;
 }
 
-.container{
+#container{
     padding: 50px;
     text-align: center;
 }
